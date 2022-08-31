@@ -5,13 +5,18 @@ const outputHypotenuse = document.querySelector('#output-hypotenuse');
 const btnresetHypotenuse = document.querySelector('#btn-reset-hypo');
 
 function calculateHypotenuse(){
-    if(inputA.value && inputB.value){
-        const sumOfSquares = calculateSumOfSquares(Number(inputA.value), Number(inputB.value));
-        const hypotenuse =Math.sqrt(sumOfSquares);
-        outputHypotenuse. innerText = "The length of the hypotenuse is " + hypotenuse + "cm";
+    if(inputA.value>0 && inputB.value>0){
+        if(inputA.value && inputB.value){
+            const sumOfSquares = calculateSumOfSquares(Number(inputA.value), Number(inputB.value));
+            const hypotenuse =Math.sqrt(sumOfSquares);
+            outputHypotenuse. innerText = "The length of the hypotenuse is " + hypotenuse + "cm";
+        }else{
+            outputHypotenuse.innerText = "Please provide length of both the sides!"
+        }
     }else{
-        outputHypotenuse.innerText = "Please provide length of both the sides!"
+        outputHypotenuse.innerText = "Values of a & b should be greater than 0";
     }
+    
 }
 
 function calculateSumOfSquares(a, b){
