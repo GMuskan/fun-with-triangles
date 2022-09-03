@@ -5,7 +5,11 @@ const outputArea = document.querySelector('#output-area');
 const btnresetArea = document.querySelector('#btn-reset-area');
 
 function calculateArea(){
-    if(inputBase.value && inputHeight.value){
+    
+    if(inputBase.value<0 || inputHeight.value<0){
+        outputArea. innerText = "Base or Height cannot be negative!";
+    }
+    else if(inputBase.value && inputHeight.value){
         const area = ((Number(inputBase.value))*(Number(inputHeight.value)))/2;
         outputArea. innerText = "The area of the triangle is " + area + "cm²";
     }else{
